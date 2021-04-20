@@ -1,6 +1,7 @@
 # bull.js
 
 Bull is a Node library that implements a fast and robust queue system based on redis.
+LIFO
 
 Errors:
 
