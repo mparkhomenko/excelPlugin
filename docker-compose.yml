@@ -1,0 +1,12 @@
+version: "3.5"
+
+services:
+  local_queue_redis:
+    image: "bitnami/redis:latest"
+    container_name: "local_queue_container"
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+    ports:
+      - ${QUEUE_REDIS_PORT}:6379
+    restart: unless-stopped
+    command: redis-server --requirepass 1
