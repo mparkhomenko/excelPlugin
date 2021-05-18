@@ -4,11 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build":"rm -rf dist && tsc -p .",
-    "standAlone": "yarn build && ts-node ./src/cases/standAlone/app.ts",
-    "dependency:consumer":"yarn build && ts-node ./src/cases/dependency/consumer/app.ts",
-    "dependency:publisher":"yarn build && ts-node ./src/cases/dependency/publisher/app.ts"
-
+    "build": "rm -rf dist && tsc -p .",
+    "start": "yarn build && node ./dist/src/bot/www/bin.js $1"
   },
   "dependencies": {
     "@types/bull": "^3.12.2",
