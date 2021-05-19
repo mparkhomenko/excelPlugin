@@ -1,3 +1,9 @@
-import "module-alias/register";
+import { createFile } from './create';
+import { readFile } from './read';
+import * as fs from 'fs';
 
-console.log(process.argv[2]);
+(async () => {
+    const file = '/Users/maksimparkhomenka/Documents/work/bull.js/excel.xlsx';
+    await fs.promises.access(file).catch(() => createFile());
+    await readFile();
+})();
