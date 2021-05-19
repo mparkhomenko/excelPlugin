@@ -1,17 +1,14 @@
 import * as Excel from 'exceljs';
 import fetch from 'node-fetch';
+import { DATA as CONSTANTS } from './constants';
 
 export async function readFile() {
     const workbook = new Excel.Workbook();
-    const organizationId = '5e95c935374008195a3df6c5';
-    const key = '6dcb383203d24e1a2e95501a1e498a47';
-    const token = '4707d6cca8c5acc66161557eec22b5fdf4d4efe63bfc88b5083f2b1e15c85b07';
-    const apiUrl = 'https://api.trello.com/';
 
     await workbook.xlsx.readFile('excel.xlsx').then(function() {
         let worksheet = workbook.getWorksheet('Trello Sheet');
 
-        fetch(`${apiUrl}1/boards/${organizationId}/cards?key=${key}&token=${token}`)
+        fetch(`${CONSTANTS.API_URL}1/boards/${CONSTANTS.ORGANIZATION_ID}/cards?key=${CONSTANTS.KEY}&token=${CONSTANTS.TOKEN}`)
         .then(res => res.json())
         .then(json => {
             for (let i = 0; i < json.length; i++) {
