@@ -30,3 +30,4 @@ coverage/
 /static
 schemaspy/
 excel.xlsx
+constants.ts

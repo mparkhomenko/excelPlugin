@@ -1,0 +1,787 @@
+[
+    {
+        "id": "6080215f9afba43102286242",
+        "checkItemStates": null,
+        "closed": false,
+        "dateLastActivity": "2021-05-14T06:55:14.647Z",
+        "desc": "Описание https://www.notion.so/a449c2af98804f78825707ad8f032e1c?v=01bf77a62db040909a33903dcb3eb857&p=39e9ef0f485c4847986c1bcc0586e2a2\n\n*Хотелось бы обратить внимание на Pitch\n",
+        "descData": {
+            "emoji": {}
+        },
+        "dueReminder": null,
+        "idBoard": "5fd89ccc8595262ead4e5f03",
+        "idList": "5fd89af54c8b7c44ad027065",
+        "idMembersVoted": [],
+        "idShort": 102,
+        "idAttachmentCover": null,
+        "idLabels": [
+            "6019344a02c5e13ceab29a77"
+        ],
+        "manualCoverAttachment": false,
+        "name": "Окно выбора шаблонов + группировка шаблонов",
+        "pos": 4096,
+        "shortLink": "Hbc9mjNb",
+        "isTemplate": false,
+        "cardRole": null,
+        "badges": {
+            "attachmentsByType": {
+                "trello": {
+                    "board": 0,
+                    "card": 0
+                }
+            },
+            "location": false,
+            "votes": 0,
+            "viewingMemberVoted": false,
+            "subscribed": false,
+            "fogbugz": "",
+            "checkItems": 0,
+            "checkItemsChecked": 0,
+            "checkItemsEarliestDue": null,
+            "comments": 0,
+            "attachments": 0,
+            "description": true,
+            "due": null,
+            "dueComplete": false,
+            "start": null
+        },
+        "dueComplete": false,
+        "due": null,
+        "idChecklists": [],
+        "idMembers": [
+            "60508f76774a890ac63b6182"
+        ],
+        "labels": [
+            {
+                "id": "6019344a02c5e13ceab29a77",
+                "idBoard": "5fd89ccc8595262ead4e5f03",
+                "name": "первая очередь",
+                "color": "orange"
+            }
+        ],
+        "shortUrl": "https://trello.com/c/Hbc9mjNb",
+        "start": null,
+        "subscribed": false,
+        "url": "https://trello.com/c/Hbc9mjNb/102-%D0%BE%D0%BA%D0%BD%D0%BE-%D0%B2%D1%8B%D0%B1%D0%BE%D1%80%D0%B0-%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD%D0%BE%D0%B2-%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0-%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD%D0%BE%D0%B2",
+        "cover": {
+            "idAttachment": null,
+            "color": null,
+            "idUploadedBackground": null,
+            "size": "normal",
+            "brightness": "dark",
+            "idPlugin": null
+        }
+    },
+    {
+        "id": "607d4d274dec9a60ef312297",
+        "checkItemStates": null,
+        "closed": false,
+        "dateLastActivity": "2021-05-14T12:37:08.146Z",
+        "desc": "Это могут быть поиски, страницы когда нет компаний/категорий/проектов/разделов.... Это может быть внутри редактора\n\n--\n\n**Что нужно:**\n1. Полный список мест по всему сайту\n2. Если есть, предложения, что можно сделать\n",
+        "descData": {
+            "emoji": {}
+        },
+        "dueReminder": null,
+        "idBoard": "5fd89ccc8595262ead4e5f03",
+        "idList": "5fd89af54c8b7c44ad027065",
+        "idMembersVoted": [],
+        "idShort": 85,
+        "idAttachmentCover": null,
+        "idLabels": [
+            "601946602a2185367f52389e"
+        ],
+        "manualCoverAttachment": false,
+        "name": "Собрать все места, где есть empty states",
+        "pos": 12288,
+        "shortLink": "2aXjx77o",
+        "isTemplate": false,
+        "cardRole": null,
+        "badges": {
+            "attachmentsByType": {
+                "trello": {
+                    "board": 0,
+                    "card": 0
+                }
+            },
+            "location": false,
+            "votes": 0,
+            "viewingMemberVoted": false,
+            "subscribed": false,
+            "fogbugz": "",
+            "checkItems": 0,
+            "checkItemsChecked": 0,
+            "checkItemsEarliestDue": null,
+            "comments": 0,
+            "attachments": 0,
+            "description": true,
+            "due": null,
+            "dueComplete": false,
+            "start": null
+        },
+        "dueComplete": false,
+        "due": null,
+        "idChecklists": [],
+        "idMembers": [
+            "60508f76774a890ac63b6182"
+        ],
+        "labels": [
+            {
+                "id": "601946602a2185367f52389e",
+                "idBoard": "5fd89ccc8595262ead4e5f03",
+                "name": "вторая очедерь",
+                "color": "green"
+            }
+        ],
+        "shortUrl": "https://trello.com/c/2aXjx77o",
+        "start": null,
+        "subscribed": false,
+        "url": "https://trello.com/c/2aXjx77o/85-%D1%81%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D1%8C-%D0%B2%D1%81%D0%B5-%D0%BC%D0%B5%D1%81%D1%82%D0%B0-%D0%B3%D0%B4%D0%B5-%D0%B5%D1%81%D1%82%D1%8C-empty-states",
+        "cover": {
+            "idAttachment": null,
+            "color": null,
+            "idUploadedBackground": null,
+            "size": "normal",
+            "brightness": "dark",
+            "idPlugin": null
+        }
+    },
+    {
+        "id": "6051a3a86de1f92ec3791c67",
+        "checkItemStates": null,
+        "closed": false,
+        "dateLastActivity": "2021-05-13T07:47:24.113Z",
+        "desc": "* собрать нужные шаблоны для верстки\n* продумать план описания функций\n* все скринкасты лежат тут: https://drive.google.com/drive/folders/16vLtRIGMXLdREQAwW54qsHXDz8liuBHD\n* План занятий https://docs.google.com/spreadsheets/d/1-uXNmm1UVAwFIrFzlvWBqSo9KqE8dPA7Iaq7olQnguc/edit#gid=0\n* Папка для обучения scorm \nhttps://drive.google.com/drive/u/1/folders/1P_rTWQ4-ZvFdEgHBkZGQfOOIj5mX6GCP\n",
+        "descData": {
+            "emoji": {}
+        },
+        "dueReminder": null,
+        "idBoard": "5fd89ccc8595262ead4e5f03",
+        "idList": "5fd89af54c8b7c44ad027065",
+        "idMembersVoted": [],
+        "idShort": 26,
+        "idAttachmentCover": null,
+        "idLabels": [
+            "6019344a02c5e13ceab29a77"
+        ],
+        "manualCoverAttachment": false,
+        "name": "Онбординг курс по IDW",
+        "pos": 16384,
+        "shortLink": "tgcTknom",
+        "isTemplate": false,
+        "cardRole": null,
+        "badges": {
+            "attachmentsByType": {
+                "trello": {
+                    "board": 0,
+                    "card": 0
+                }
+            },
+            "location": false,
+            "votes": 0,
+            "viewingMemberVoted": false,
+            "subscribed": false,
+            "fogbugz": "",
+            "checkItems": 27,
+            "checkItemsChecked": 26,
+            "checkItemsEarliestDue": null,
+            "comments": 3,
+            "attachments": 0,
+            "description": true,
+            "due": null,
+            "dueComplete": false,
+            "start": null
+        },
+        "dueComplete": false,
+        "due": null,
+        "idChecklists": [
+            "606ec06bd26f6c6180d7a003",
+            "606ec16e32c095026dd5547e"
+        ],
+        "idMembers": [
+            "60508f76774a890ac63b6182"
+        ],
+        "labels": [
+            {
+                "id": "6019344a02c5e13ceab29a77",
+                "idBoard": "5fd89ccc8595262ead4e5f03",
+                "name": "первая очередь",
+                "color": "orange"
+            }
+        ],
+        "shortUrl": "https://trello.com/c/tgcTknom",
+        "start": null,
+        "subscribed": false,
+        "url": "https://trello.com/c/tgcTknom/26-%D0%BE%D0%BD%D0%B1%D0%BE%D1%80%D0%B4%D0%B8%D0%BD%D0%B3-%D0%BA%D1%83%D1%80%D1%81-%D0%BF%D0%BE-idw",
+        "cover": {
+            "idAttachment": null,
+            "color": null,
+            "idUploadedBackground": null,
+            "size": "normal",
+            "brightness": "light",
+            "idPlugin": null
+        }
+    },
+    {
+        "id": "606efab2c13106856184ba69",
+        "checkItemStates": null,
+        "closed": false,
+        "dateLastActivity": "2021-05-13T10:56:43.023Z",
+        "desc": "Нам нужно простое и понятное окно выбора элементов для редактора\n\nЧто важно учитывать:\n1. Для слайдов/Тестов жмем на отдельную кнопку\n2. Для лендинга ждем на плюс около элемента\n3. Элементы группируем по какому-то признаку, например, интерактив/самопроверка...\n4. Количество элементов в одной группе может быть больше 10\n5. Могут появляться новые элементы\n6. При появлении нового пользователю должно быть ясно, что это новинка\n7. Иконки для всех текущих элементов, которые соответствуют тому, что они делают\n\nhttps://www.notion.so/087161374dad44eca6eabf3dd3331d51 ",
+        "descData": {
+            "emoji": {}
+        },
+        "dueReminder": null,
+        "idBoard": "5fd89ccc8595262ead4e5f03",
+        "idList": "5fd89af54c8b7c44ad027065",
+        "idMembersVoted": [],
+        "idShort": 66,
+        "idAttachmentCover": null,
+        "idLabels": [
+            "6019344a02c5e13ceab29a77"
+        ],
+        "manualCoverAttachment": false,
+        "name": "Окно выбора элементов в редакторе",
+        "pos": 32768,
+        "shortLink": "oV4eJApt",
+        "isTemplate": false,
+        "cardRole": null,
+        "badges": {
+            "attachmentsByType": {
+                "trello": {
+                    "board": 0,
+                    "card": 0
+                }
+            },
+            "location": false,
+            "votes": 0,
+            "viewingMemberVoted": false,
+            "subscribed": false,
+            "fogbugz": "",
+            "checkItems": 0,
+            "checkItemsChecked": 0,
+            "checkItemsEarliestDue": null,
+            "comments": 1,
+            "attachments": 0,
+            "description": true,
+            "due": null,
+            "dueComplete": false,
+            "start": null
+        },
+        "dueComplete": false,
+        "due": null,
+        "idChecklists": [],
+        "idMembers": [
+            "60508f76774a890ac63b6182",
+            "60868cedd86dc16eb5daff63"
+        ],
+        "labels": [
+            {
+                "id": "6019344a02c5e13ceab29a77",
+                "idBoard": "5fd89ccc8595262ead4e5f03",
+                "name": "первая очередь",
+                "color": "orange"
+            }
+        ],
+        "shortUrl": "https://trello.com/c/oV4eJApt",
+        "start": null,
+        "subscribed": false,
+        "url": "https://trello.com/c/oV4eJApt/66-%D0%BE%D0%BA%D0%BD%D0%BE-%D0%B2%D1%8B%D0%B1%D0%BE%D1%80%D0%B0-%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2-%D0%B2-%D1%80%D0%B5%D0%B4%D0%B0%D0%BA%D1%82%D0%BE%D1%80%D0%B5",
+        "cover": {
+            "idAttachment": null,
+            "color": null,
+            "idUploadedBackground": null,
+            "size": "normal",
+            "brightness": "dark",
+            "idPlugin": null
+        }
+    },
+    {
+        "id": "60519fd51e2f203d662f43fa",
+        "checkItemStates": null,
+        "closed": false,
+        "dateLastActivity": "2021-05-13T07:47:24.093Z",
+        "desc": "1. https://www.easygenerator.com/en/\n2. https://www.gomolearning.com/\n3. https://www.elucidat.com/\n\nomnigraffle\n",
+        "descData": {
+            "emoji": {}
+        },
+        "dueReminder": null,
+        "idBoard": "5fd89ccc8595262ead4e5f03",
+        "idList": "5fd89af54c8b7c44ad027065",
+        "idMembersVoted": [],
+        "idShort": 16,
+        "idAttachmentCover": null,
+        "idLabels": [
+            "6019466c1782803bb6aa38d3"
+        ],
+        "manualCoverAttachment": true,
+        "name": "Изучить конкурентов",
+        "pos": 49152,
+        "shortLink": "TWQXs5oV",
+        "isTemplate": false,
+        "cardRole": null,
+        "badges": {
+            "attachmentsByType": {
+                "trello": {
+                    "board": 0,
+                    "card": 0
+                }
+            },
+            "location": false,
+            "votes": 0,
+            "viewingMemberVoted": false,
+            "subscribed": false,
+            "fogbugz": "",
+            "checkItems": 0,
+            "checkItemsChecked": 0,
+            "checkItemsEarliestDue": null,
+            "comments": 0,
+            "attachments": 0,
+            "description": true,
+            "due": null,
+            "dueComplete": false,
+            "start": null
+        },
+        "dueComplete": false,
+        "due": null,
+        "idChecklists": [],
+        "idMembers": [
+            "60508f76774a890ac63b6182"
+        ],
+        "labels": [
+            {
+                "id": "6019466c1782803bb6aa38d3",
+                "idBoard": "5fd89ccc8595262ead4e5f03",
+                "name": "третья очередь",
+                "color": "blue"
+            }
+        ],
+        "shortUrl": "https://trello.com/c/TWQXs5oV",
+        "start": null,
+        "subscribed": false,
+        "url": "https://trello.com/c/TWQXs5oV/16-%D0%B8%D0%B7%D1%83%D1%87%D0%B8%D1%82%D1%8C-%D0%BA%D0%BE%D0%BD%D0%BA%D1%83%D1%80%D0%B5%D0%BD%D1%82%D0%BE%D0%B2",
+        "cover": {
+            "idAttachment": null,
+            "color": null,
+            "idUploadedBackground": null,
+            "size": "normal",
+            "brightness": "light",
+            "idPlugin": null
+        }
+    },
+    {
+        "id": "6052ed8712f22e38e67d3496",
+        "checkItemStates": null,
+        "closed": false,
+        "dateLastActivity": "2021-05-13T09:29:09.583Z",
+        "desc": "https://medium.muz.li/red-routes-critical-design-paths-that-make-or-break-your-app-a642ebe0940a?gi=8012faa13019\n\n* Стандартным должен быть шаблон с пустым блоком (не путать с элементом пустой блок, см. на скрине): \n - В режиме заполнения шаблона: текст, маркер невидим \n - В режиме редактирования элемента: маркер виден\n\n* Когда новый пользователь открывает пустой раздел в редакторе в первых два раза в своей жизни, показывать empty state с поясняющим текстом, потом сразу запускать окно выбора шаблона",
+        "descData": {
+            "emoji": {}
+        },
+        "dueReminder": null,
+        "idBoard": "5fd89ccc8595262ead4e5f03",
+        "idList": "5fd89af54c8b7c44ad027065",
+        "idMembersVoted": [],
+        "idShort": 31,
+        "idAttachmentCover": null,
+        "idLabels": [
+            "6019344a02c5e13ceab29a77"
+        ],
+        "manualCoverAttachment": true,
+        "name": "Составить список ключевых шаблонов, которые сделать стандартными",
+        "pos": 65536,
+        "shortLink": "ezLzH5L5",
+        "isTemplate": false,
+        "cardRole": null,
+        "badges": {
+            "attachmentsByType": {
+                "trello": {
+                    "board": 0,
+                    "card": 0
+                }
+            },
+            "location": false,
+            "votes": 0,
+            "viewingMemberVoted": false,
+            "subscribed": false,
+            "fogbugz": "",
+            "checkItems": 0,
+            "checkItemsChecked": 0,
+            "checkItemsEarliestDue": null,
+            "comments": 1,
+            "attachments": 1,
+            "description": true,
+            "due": null,
+            "dueComplete": false,
+            "start": null
+        },
+        "dueComplete": false,
+        "due": null,
+        "idChecklists": [],
+        "idMembers": [
+            "60508f76774a890ac63b6182"
+        ],
+        "labels": [
+            {
+                "id": "6019344a02c5e13ceab29a77",
+                "idBoard": "5fd89ccc8595262ead4e5f03",
+                "name": "первая очередь",
+                "color": "orange"
+            }
+        ],
+        "shortUrl": "https://trello.com/c/ezLzH5L5",
+        "start": null,
+        "subscribed": false,
+        "url": "https://trello.com/c/ezLzH5L5/31-%D1%81%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%B8%D1%82%D1%8C-%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%B2%D1%8B%D1%85-%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD%D0%BE%D0%B2-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5-%D1%81%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C-%D1%81%D1%82%D0%B0%D0%BD%D0%B4%D0%B0%D1%80%D1%82%D0%BD%D1%8B%D0%BC%D0%B8",
+        "cover": {
+            "idAttachment": null,
+            "color": null,
+            "idUploadedBackground": null,
+            "size": "normal",
+            "brightness": "light",
+            "idPlugin": null
+        }
+    },
+    {
+        "id": "6051a179d472f4863f8a3a54",
+        "checkItemStates": null,
+        "closed": false,
+        "dateLastActivity": "2021-05-13T07:47:24.108Z",
+        "desc": "",
+        "descData": null,
+        "dueReminder": null,
+        "idBoard": "5fd89ccc8595262ead4e5f03",
+        "idList": "5fd89af54c8b7c44ad027065",
+        "idMembersVoted": [],
+        "idShort": 23,
+        "idAttachmentCover": null,
+        "idLabels": [
+            "6019344a02c5e13ceab29a77"
+        ],
+        "manualCoverAttachment": false,
+        "name": "Текстовый редактор: требования к таблицам",
+        "pos": 98304,
+        "shortLink": "6e71pmEt",
+        "isTemplate": false,
+        "cardRole": null,
+        "badges": {
+            "attachmentsByType": {
+                "trello": {
+                    "board": 0,
+                    "card": 0
+                }
+            },
+            "location": false,
+            "votes": 0,
+            "viewingMemberVoted": false,
+            "subscribed": false,
+            "fogbugz": "",
+            "checkItems": 0,
+            "checkItemsChecked": 0,
+            "checkItemsEarliestDue": null,
+            "comments": 0,
+            "attachments": 0,
+            "description": false,
+            "due": null,
+            "dueComplete": false,
+            "start": null
+        },
+        "dueComplete": false,
+        "due": null,
+        "idChecklists": [],
+        "idMembers": [
+            "60508f76774a890ac63b6182"
+        ],
+        "labels": [
+            {
+                "id": "6019344a02c5e13ceab29a77",
+                "idBoard": "5fd89ccc8595262ead4e5f03",
+                "name": "первая очередь",
+                "color": "orange"
+            }
+        ],
+        "shortUrl": "https://trello.com/c/6e71pmEt",
+        "start": null,
+        "subscribed": false,
+        "url": "https://trello.com/c/6e71pmEt/23-%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%BE%D0%B2%D1%8B%D0%B9-%D1%80%D0%B5%D0%B4%D0%B0%D0%BA%D1%82%D0%BE%D1%80-%D1%82%D1%80%D0%B5%D0%B1%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-%D0%BA-%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0%D0%BC",
+        "cover": {
+            "idAttachment": null,
+            "color": null,
+            "idUploadedBackground": null,
+            "size": "normal",
+            "brightness": "light",
+            "idPlugin": null
+        }
+    },
+    {
+        "id": "6050d18406650e6039076cc8",
+        "checkItemStates": null,
+        "closed": false,
+        "dateLastActivity": "2021-05-13T07:47:24.104Z",
+        "desc": "- Как группировать слайды-блоки в позицию? \n- Как показывать блоки в позиции?",
+        "descData": {
+            "emoji": {}
+        },
+        "dueReminder": null,
+        "idBoard": "5fd89ccc8595262ead4e5f03",
+        "idList": "5fd89af54c8b7c44ad027065",
+        "idMembersVoted": [],
+        "idShort": 14,
+        "idAttachmentCover": null,
+        "idLabels": [
+            "601946602a2185367f52389e"
+        ],
+        "manualCoverAttachment": false,
+        "name": "Продумать группировку тестов",
+        "pos": 114688,
+        "shortLink": "7qLRtnhH",
+        "isTemplate": false,
+        "cardRole": null,
+        "badges": {
+            "attachmentsByType": {
+                "trello": {
+                    "board": 0,
+                    "card": 0
+                }
+            },
+            "location": false,
+            "votes": 0,
+            "viewingMemberVoted": false,
+            "subscribed": false,
+            "fogbugz": "",
+            "checkItems": 0,
+            "checkItemsChecked": 0,
+            "checkItemsEarliestDue": null,
+            "comments": 0,
+            "attachments": 0,
+            "description": true,
+            "due": null,
+            "dueComplete": false,
+            "start": null
+        },
+        "dueComplete": false,
+        "due": null,
+        "idChecklists": [],
+        "idMembers": [
+            "60508f76774a890ac63b6182"
+        ],
+        "labels": [
+            {
+                "id": "601946602a2185367f52389e",
+                "idBoard": "5fd89ccc8595262ead4e5f03",
+                "name": "вторая очедерь",
+                "color": "green"
+            }
+        ],
+        "shortUrl": "https://trello.com/c/7qLRtnhH",
+        "start": null,
+        "subscribed": false,
+        "url": "https://trello.com/c/7qLRtnhH/14-%D0%BF%D1%80%D0%BE%D0%B4%D1%83%D0%BC%D0%B0%D1%82%D1%8C-%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D1%83-%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2",
+        "cover": {
+            "idAttachment": null,
+            "color": null,
+            "idUploadedBackground": null,
+            "size": "normal",
+            "brightness": "light",
+            "idPlugin": null
+        }
+    },
+    {
+        "id": "60520848dbc8f96cb03f8f10",
+        "checkItemStates": null,
+        "closed": false,
+        "dateLastActivity": "2021-05-13T12:34:44.109Z",
+        "desc": "https://www.figma.com/file/FpJ5ucq5uCKL4E17kxpZdQ/iSpring?node-id=0%3A1",
+        "descData": {
+            "emoji": {}
+        },
+        "dueReminder": null,
+        "idBoard": "5fd89ccc8595262ead4e5f03",
+        "idList": "5fd89af54c8b7c44ad027065",
+        "idMembersVoted": [],
+        "idShort": 28,
+        "idAttachmentCover": "605466c03688734dd01d51ed",
+        "idLabels": [
+            "601946602a2185367f52389e"
+        ],
+        "manualCoverAttachment": false,
+        "name": "Продумать общую форму заполнения контентом шаблона",
+        "pos": 131072,
+        "shortLink": "8k47dppt",
+        "isTemplate": false,
+        "cardRole": null,
+        "badges": {
+            "attachmentsByType": {
+                "trello": {
+                    "board": 0,
+                    "card": 0
+                }
+            },
+            "location": false,
+            "votes": 0,
+            "viewingMemberVoted": false,
+            "subscribed": false,
+            "fogbugz": "",
+            "checkItems": 0,
+            "checkItemsChecked": 0,
+            "checkItemsEarliestDue": null,
+            "comments": 2,
+            "attachments": 1,
+            "description": true,
+            "due": null,
+            "dueComplete": false,
+            "start": null
+        },
+        "dueComplete": false,
+        "due": null,
+        "idChecklists": [],
+        "idMembers": [
+            "60508f76774a890ac63b6182"
+        ],
+        "labels": [
+            {
+                "id": "601946602a2185367f52389e",
+                "idBoard": "5fd89ccc8595262ead4e5f03",
+                "name": "вторая очедерь",
+                "color": "green"
+            }
+        ],
+        "shortUrl": "https://trello.com/c/8k47dppt",
+        "start": null,
+        "subscribed": false,
+        "url": "https://trello.com/c/8k47dppt/28-%D0%BF%D1%80%D0%BE%D0%B4%D1%83%D0%BC%D0%B0%D1%82%D1%8C-%D0%BE%D0%B1%D1%89%D1%83%D1%8E-%D1%84%D0%BE%D1%80%D0%BC%D1%83-%D0%B7%D0%B0%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%BD%D1%82%D0%BE%D0%BC-%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD%D0%B0",
+        "cover": {
+            "idAttachment": "605466c03688734dd01d51ed",
+            "color": null,
+            "idUploadedBackground": null,
+            "size": "normal",
+            "brightness": "light",
+            "idPlugin": null
+        }
+    },
+    {
+        "id": "6051a589af51b2822584572f",
+        "checkItemStates": null,
+        "closed": false,
+        "dateLastActivity": "2021-05-13T07:47:24.102Z",
+        "desc": "",
+        "descData": null,
+        "dueReminder": null,
+        "idBoard": "5fd89ccc8595262ead4e5f03",
+        "idList": "5fd89af54c8b7c44ad027065",
+        "idMembersVoted": [],
+        "idShort": 27,
+        "idAttachmentCover": null,
+        "idLabels": [],
+        "manualCoverAttachment": false,
+        "name": "Провести обучение А1",
+        "pos": 147456,
+        "shortLink": "oMvtdBuw",
+        "isTemplate": false,
+        "cardRole": null,
+        "badges": {
+            "attachmentsByType": {
+                "trello": {
+                    "board": 0,
+                    "card": 0
+                }
+            },
+            "location": false,
+            "votes": 0,
+            "viewingMemberVoted": false,
+            "subscribed": false,
+            "fogbugz": "",
+            "checkItems": 0,
+            "checkItemsChecked": 0,
+            "checkItemsEarliestDue": null,
+            "comments": 0,
+            "attachments": 0,
+            "description": false,
+            "due": null,
+            "dueComplete": false,
+            "start": null
+        },
+        "dueComplete": false,
+        "due": null,
+        "idChecklists": [],
+        "idMembers": [
+            "60508f76774a890ac63b6182"
+        ],
+        "labels": [],
+        "shortUrl": "https://trello.com/c/oMvtdBuw",
+        "start": null,
+        "subscribed": false,
+        "url": "https://trello.com/c/oMvtdBuw/27-%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%81%D1%82%D0%B8-%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B01",
+        "cover": {
+            "idAttachment": null,
+            "color": null,
+            "idUploadedBackground": null,
+            "size": "normal",
+            "brightness": "light",
+            "idPlugin": null
+        }
+    },
+    {
+        "id": "60585d113725290ca5dc1d86",
+        "checkItemStates": null,
+        "closed": false,
+        "dateLastActivity": "2021-05-17T10:24:19.968Z",
+        "desc": "",
+        "descData": null,
+        "dueReminder": null,
+        "idBoard": "5fd89ccc8595262ead4e5f03",
+        "idList": "5fd89af54c8b7c44ad027065",
+        "idMembersVoted": [],
+        "idShort": 37,
+        "idAttachmentCover": null,
+        "idLabels": [],
+        "manualCoverAttachment": false,
+        "name": "Подготовить презентацию по итогам обучения Евраза и первого исследования пользователей",
+        "pos": 163840,
+        "shortLink": "mHTOWUYd",
+        "isTemplate": false,
+        "cardRole": null,
+        "badges": {
+            "attachmentsByType": {
+                "trello": {
+                    "board": 0,
+                    "card": 0
+                }
+            },
+            "location": false,
+            "votes": 0,
+            "viewingMemberVoted": false,
+            "subscribed": false,
+            "fogbugz": "",
+            "checkItems": 0,
+            "checkItemsChecked": 0,
+            "checkItemsEarliestDue": null,
+            "comments": 1,
+            "attachments": 0,
+            "description": false,
+            "due": null,
+            "dueComplete": false,
+            "start": null
+        },
+        "dueComplete": false,
+        "due": null,
+        "idChecklists": [],
+        "idMembers": [
+            "5f1176bc3fda4d6b4864da09",
+            "5159c9f23fdd0c3a27001218",
+            "60508f76774a890ac63b6182"
+        ],
+        "labels": [],
+        "shortUrl": "https://trello.com/c/mHTOWUYd",
+        "start": null,
+        "subscribed": false,
+        "url": "https://trello.com/c/mHTOWUYd/37-%D0%BF%D0%BE%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%B8%D1%82%D1%8C-%D0%BF%D1%80%D0%B5%D0%B7%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%8E-%D0%BF%D0%BE-%D0%B8%D1%82%D0%BE%D0%B3%D0%B0%D0%BC-%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B5%D0%B2%D1%80%D0%B0%D0%B7%D0%B0-%D0%B8-%D0%BF%D0%B5%D1%80%D0%B2%D0%BE%D0%B3%D0%BE-%D0%B8%D1%81%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D0%B5%D0%B9",
+        "cover": {
+            "idAttachment": null,
+            "color": null,
+            "idUploadedBackground": null,
+            "size": "normal",
+            "brightness": "light",
+            "idPlugin": null
+        }
+    },
+]
