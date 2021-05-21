@@ -71,6 +71,7 @@
   "author": "",
   "license": "MIT",
   "_moduleAliases": {
+    "@core/utils":"dist/src/utils/index",
     "@core/config": "dist/src/config/config",
     "@core/cache": "dist/src/modules/cache",
     "@core/queue": "dist/src/modules/queue"

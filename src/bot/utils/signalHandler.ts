@@ -1,9 +1,12 @@
-import { logger } from "./logger";
-import { closeQueue } from "../queue";
+// import { db } from "@core/db";
+import { logger as loggerInstance } from "./logger";
+
 
 export async function onSignal(signal: string): Promise<void> {
-  await closeQueue();
-  logger.debug("QUEUE have closed");
+
+  // await db.sequelize.connectionManager.close();
+  loggerInstance.logger.debug("\nSEQUELIZE connection was closed\n");
+
   switch (signal) {
     case "SIGINT":
       process.exit();
@@ -21,10 +24,11 @@ export async function onSignal(signal: string): Promise<void> {
 }
 
 export async function onError(error: any) {
-  logger.error({ err: error });
+  loggerInstance.logger.error({ err: error });
 
-  await closeQueue();
-  logger.debug("QUEUE have closed");
+
+  // await db.sequelize.connectionManager.close();
+  loggerInstance.logger.debug("\nSEQUELIZE connection was closed\n");
 
   if (error.syscall !== "listen") {
     throw error;

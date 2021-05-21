@@ -40,6 +40,7 @@
       "@core/config": ["./../src/config/config.ts"],
       "@core/cache": ["./../src/modules/cache"],
       "@core/queue": ["./../src/modules/queue.ts"],
+      "@core/utils": ["./../src/utils/index.ts"]
     }
   },
   "exclude": ["node_modules", "dist", "jest.config.js", "front-end"]

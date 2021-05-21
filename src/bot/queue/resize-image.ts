@@ -1,7 +1,7 @@
 import { queue } from "@core/queue";
 import { Job } from "bull";
 import { readFile } from "./utils";
-import { logger } from "../utils/logger";
+import { logger as loggerInstance} from "../utils/logger";
 
 const PROCESS_READ = "PROCESS_READ_STANDALONE";
 
@@ -22,9 +22,9 @@ const processRead = async (
 
   try {
     const result = await readFile(path);
-    logger.debug("[Queue result]", serviceName, uuid, result);
+    loggerInstance.logger.debug("[Queue result]", serviceName, uuid, result);
   } catch (e) {
-    logger.error("[Queue error]", serviceName, uuid, e);
+    loggerInstance.logger.error("[Queue error]", serviceName, uuid, e);
   }
 
   done();

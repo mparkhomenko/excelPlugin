@@ -1,18 +1,3 @@
-import Logger from "bunyan";
-import bformat from "bunyan-format";
+import { createLogger } from "@core/utils";
 
-const formatOut = bformat({
-  outputMode: "short" as any,
-  color: true,
-});
-
-export const logger = Logger.createLogger({
-  src: true,
-  name: "dependency",
-  streams: [
-    {
-      stream: formatOut,
-    },
-  ],
-  level: "debug",
-});
+export const logger = createLogger("bot");

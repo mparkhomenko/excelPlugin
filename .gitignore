@@ -29,5 +29,5 @@ coverage/
 /.idea
 /static
 schemaspy/
-excel.xlsx
+*.xlsx
 constants.ts
