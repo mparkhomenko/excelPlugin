@@ -1,4 +1,5 @@
 import * as Excel from 'exceljs';
+const { GoogleSpreadsheet } = require('google-spreadsheet');
 
 type Action = {
     data: {

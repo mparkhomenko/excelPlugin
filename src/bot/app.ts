@@ -36,12 +36,9 @@ app.use(
 
 app.use('/excel', async (req, res) => {
     const fileName = req.body.action.data.board.name;
-    const cardData = req.body.action;
-    const file = '/Users/maksimparkhomenka/Documents/work/bull.js/' + fileName + '.xlsx';
-    await fs.promises.access(file).catch(() => createFile(fileName));
-    await readFile(fileName, cardData);
 
-    console.log(req.body)
+    let fileData = await createFile(fileName);
+    // await readFile(fileData);
     res.send()
 })
 
