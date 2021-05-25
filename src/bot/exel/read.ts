@@ -1,70 +1,162 @@
-import * as Excel from 'exceljs';
-const { GoogleSpreadsheet } = require('google-spreadsheet');
+import { google } from "googleapis";
 
 type Action = {
-    data: {
-        card: {
-            desc:string,
-            name:string,
-            shortLink:string
-        },
-        board: {
-            id:string,
-            name:string,
-            shortLink:string
-        },
-        list?: {
-            name: string,
-        },
-        listBefore?: { 
-            name:string 
-        },
-        listAfter?: { 
-            name:string
-        },
-    },
-    memberCreator: {
-        username:string,
-    }
-}
-
-export async function readFile(fileName:string, cardData:Action) {
-    const workbook = new Excel.Workbook();
-    const boardName = cardData.data.board.name;
-    const cardName = cardData.data.card.name;
-    const shortlinkCard = 'https://trello.com/c/' + cardData.data.card.shortLink;
-    const shortLinkBoard = 'https://trello.com/b/' + cardData.data.board.shortLink;
-    const memberCreator = cardData.memberCreator.username;
-    const listCreated = cardData.data.list?.name || "";
-    const listBefore = cardData.data.listBefore?.name;
-    const listAfter = cardData.data.listAfter?.name;
-
-    await workbook.xlsx.readFile(fileName + '.xlsx')
-     
-    let worksheet = workbook.getWorksheet('Sheet');
-
-    worksheet.columns = [
-        {header: 'Доска', key: 'BoardName', width: 32},
-        {header: 'Ссылка на доску', key: 'ShortLinkBoard', width: 32},
-        {header: 'Название карточки', key: 'CardName', width: 32},
-        {header: 'Имя создателя', key: 'CardCreator', width: 32},
-        {header: 'Ссылка на карточку', key: 'ShortLinkCard', width: 32},
-        {header: 'Список создания карточки', key: 'ListCreated', width: 32},
-        {header: 'Предыдущий список', key: 'ListBefore', width: 32},
-        {header: 'Текущий список', key: 'ListAfter', width: 32},
-    ];
-
-    worksheet.addRow(
-        {
-            BoardName: boardName, 
-            ShortLinkBoard: shortLinkBoard, 
-            CardName: cardName,
-            CardCreator: memberCreator,
-            ShortLinkCard: shortlinkCard,
-            ListCreated: listCreated,
-            ListBefore: listBefore,
-            ListAfter: listAfter
-        }
-    );
-    workbook.xlsx.writeFile(fileName + '.xlsx');
+  data: {
+    card: {
+      desc: string;
+      name: string;
+      shortLink: string;
+    };
+    board: {
+      id: string;
+      name: string;
+      shortLink: string;
+    };
+    list?: {
+      name: string;
+    };
+    listBefore?: {
+      name: string;
+    };
+    listAfter?: {
+      name: string;
+    };
+  };
+  memberCreator: {
+    username: string;
+  };
 };
+
+type FileData = {
+  id: string;
+  name: string;
+};
+
+export async function readFile(fileData: FileData, cardData: Action) {
+  const fileId = fileData.id;
+  const boardName = cardData.data.board.name;
+  const cardName = cardData.data.card.name;
+  const shortlinkCard = "https://trello.com/c/" + cardData.data.card.shortLink;
+  const shortLinkBoard =
+    "https://trello.com/b/" + cardData.data.board.shortLink;
+  const memberCreator = cardData.memberCreator.username;
+  const listBefore = cardData.data.listBefore?.name;
+  const listAfter = cardData.data.listAfter?.name;
+
+  const auth = new google.auth.GoogleAuth({
+    keyFile: "./src/bot/exel/leenda-creds.json",
+    scopes: ["https://www.googleapis.com/auth/spreadsheets"],
+  });
+
+  const sheetsAuth = google.sheets({
+    version: "v4",
+    auth: auth,
+  });
+
+  const getSheetData = {
+    spreadsheetId: fileId,
+    ranges: ["A1"],
+  };
+
+  const sheeyAddHeaders = {
+    spreadsheetId: fileId,
+    valueInputOption: "USER_ENTERED",
+    range: "A1",
+    requestBody: {
+      values: [
+        [
+          "Доска",
+          "Ссылка на доску",
+          "Название карточки",
+          "Имя создателя",
+          "Ссылка на карточку",
+          "Предыдущий список",
+          "Текущий список",
+        ],
+      ],
+      majorDimension: "ROWS",
+    },
+  };
+
+  const sheetAppendValues = {
+    spreadsheetId: fileId,
+    valueInputOption: "RAW",
+    range: "A2",
+    requestBody: {
+      values: [
+        [
+          boardName,
+          shortLinkBoard,
+          cardName,
+          memberCreator,
+          shortlinkCard,
+          listBefore,
+          listAfter,
+        ],
+      ],
+    },
+  };
+
+  const getSheet = await sheetsAuth.spreadsheets.get(getSheetData);
+  const sheetId = getSheet.data.sheets?.[0].properties?.sheetId;
+
+  const updateSheetStyle = {
+    spreadsheetId: fileId,
+    requestBody: {
+      requests: [
+        {
+          repeatCell: {
+            range: {
+              sheetId: sheetId,
+              startRowIndex: 0,
+              endRowIndex: 1,
+              startColumnIndex: 0,
+              endColumnIndex: 8,
+            },
+            cell: {
+              userEnteredFormat: {
+                backgroundColor: {
+                  red: 0.85,
+                  green: 0.85,
+                  blue: 1.0,
+                },
+                horizontalAlignment: "CENTER",
+                textFormat: {
+                  foregroundColor: {
+                    red: 0.0,
+                    green: 0.0,
+                    blue: 0.0,
+                  },
+                  fontSize: 12,
+                  bold: true,
+                },
+              },
+            },
+            fields:
+              "userEnteredFormat(backgroundColor,textFormat,horizontalAlignment)",
+          },
+        },
+        {
+          updateDimensionProperties: {
+            range: {
+              sheetId: sheetId,
+              dimension: "COLUMNS",
+              startIndex: 0,
+              endIndex: 8,
+            },
+            properties: {
+              pixelSize: 220,
+            },
+            fields: "pixelSize",
+          },
+        },
+      ],
+    },
+  };
+
+  await sheetsAuth.spreadsheets.values.update(sheeyAddHeaders);
+
+  await sheetsAuth.spreadsheets.values.append(sheetAppendValues);
+
+  await sheetsAuth.spreadsheets.batchUpdate(updateSheetStyle);
+}

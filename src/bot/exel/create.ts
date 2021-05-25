@@ -2,7 +2,7 @@ import { google } from 'googleapis';
 
 export async function createFile(fileName:string) {
     const auth = new google.auth.GoogleAuth({
-        keyFile: './src/bot/exel/leenda-d0add9b33944.json',
+        keyFile: './src/bot/exel/leenda-creds.json',
         scopes: [
             'https://www.googleapis.com/auth/drive',
             'https://www.googleapis.com/auth/drive.file',
@@ -10,25 +10,27 @@ export async function createFile(fileName:string) {
         ],
     });
 
-    const drive = google.drive({
+    const driveAuth = google.drive({
         version: 'v3',
         auth: auth
     });
 
-    const list = await drive.files.list({
+    const list = await driveAuth.files.list({
         q: "name='" + fileName + "'",
     });
-    const filesList = list.data.files;
+    const filesList = list.data.files?.[0];
 
     let createdFileData = {};
-    if (filesList === undefined || filesList.length == 0) {
-        const createdFile = await drive.files.create({
+
+    if (filesList === undefined) {
+        const fileCreate = {
             requestBody: {
                 name: fileName,
                 mimeType: 'application/vnd.google-apps.spreadsheet',
                 parents: ['10Z2CvyQNPPkjpd6o1E0MrEFEimXAWOy6'],
             },
-        });
+        };
+        const createdFile = await driveAuth.files.create(fileCreate);
 
         createdFileData = createdFile.data;
     } else {

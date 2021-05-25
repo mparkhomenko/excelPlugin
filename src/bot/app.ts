@@ -36,10 +36,12 @@ app.use(
 
 app.use('/excel', async (req, res) => {
     const fileName = req.body.action.data.board.name;
+    const cardData = req.body.action;
 
     let fileData = await createFile(fileName);
-    // await readFile(fileData);
+    // @ts-ignore
+    await readFile(fileData, cardData);
     res.send()
-})
+});
 
 export { app };
