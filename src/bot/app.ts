@@ -7,7 +7,6 @@ import { logger } from "./utils/logger";
 import cors from "cors";
 import { createFile } from '../bot/exel/create';
 import { readFile } from '../bot/exel/read';
-import * as fs from 'fs';
 
 const app = express();
 
