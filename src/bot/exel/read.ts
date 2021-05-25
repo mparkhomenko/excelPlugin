@@ -58,7 +58,7 @@ export async function readFile(fileData: FileData, cardData: Action) {
     ranges: ["A1"],
   };
 
-  const sheeyAddHeaders = {
+  const sheetAddHeaders = {
     spreadsheetId: fileId,
     valueInputOption: "USER_ENTERED",
     range: "A1",
@@ -72,6 +72,7 @@ export async function readFile(fileData: FileData, cardData: Action) {
           "Ссылка на карточку",
           "Предыдущий список",
           "Текущий список",
+          "Количество записей",
         ],
       ],
       majorDimension: "ROWS",
@@ -154,9 +155,33 @@ export async function readFile(fileData: FileData, cardData: Action) {
     },
   };
 
-  await sheetsAuth.spreadsheets.values.update(sheeyAddHeaders);
+  await sheetsAuth.spreadsheets.values.update(sheetAddHeaders);
 
   await sheetsAuth.spreadsheets.values.append(sheetAppendValues);
 
   await sheetsAuth.spreadsheets.batchUpdate(updateSheetStyle);
+
+  const getNumberOfValues = await sheetsAuth.spreadsheets.values.get({
+    range: "A2:A",
+    spreadsheetId: fileId,
+  });
+
+  const valuesCountFormula =
+    "=COUNTA(A2:A" +
+    ((getNumberOfValues.data.values?.length
+      ? getNumberOfValues.data.values?.length
+      : 1) + 1) +
+    ")";
+
+  const sheetAppendValuesCount = {
+    spreadsheetId: fileId,
+    valueInputOption: "USER_ENTERED",
+    range: "H2",
+    requestBody: {
+      values: [[valuesCountFormula]],
+    },
+    responseValueRenderOption: "FORMULA",
+  };
+
+  await sheetsAuth.spreadsheets.values.update(sheetAppendValuesCount);
 }
