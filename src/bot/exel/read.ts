@@ -1,4 +1,6 @@
 import { google } from "googleapis";
+const ACTION_MOVE_CARD_FROM_LIST_TO_LIST = "action_move_card_from_list_to_list";
+const ACTION_CREATE_CARD = "action_create_card";
 
 type Action = {
   data: {
@@ -32,7 +34,16 @@ type FileData = {
   name: string;
 };
 
-export async function readFile(fileData: FileData, cardData: Action) {
+type ActionType = {
+  translationKey: string;
+};
+
+export async function readFile(fileData: FileData, cardData: Action, actionType:ActionType) {
+  const action = actionType.translationKey;
+  if (action != ACTION_MOVE_CARD_FROM_LIST_TO_LIST && action != ACTION_CREATE_CARD) {
+    return;
+  }
+
   const fileId = fileData.id;
   const boardName = cardData.data.board.name;
   const cardName = cardData.data.card.name;
@@ -40,6 +51,7 @@ export async function readFile(fileData: FileData, cardData: Action) {
   const shortLinkBoard =
     "https://trello.com/b/" + cardData.data.board.shortLink;
   const memberCreator = cardData.memberCreator.username;
+  const listCreated = cardData.data.list?.name;
   const listBefore = cardData.data.listBefore?.name;
   const listAfter = cardData.data.listAfter?.name;
 
@@ -79,6 +91,7 @@ export async function readFile(fileData: FileData, cardData: Action) {
     },
   };
 
+  const list = listAfter ? listAfter : listCreated;
   const sheetAppendValues = {
     spreadsheetId: fileId,
     valueInputOption: "RAW",
@@ -92,7 +105,7 @@ export async function readFile(fileData: FileData, cardData: Action) {
           memberCreator,
           shortlinkCard,
           listBefore,
-          listAfter,
+          list,
         ],
       ],
     },
