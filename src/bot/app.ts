@@ -1,19 +1,18 @@
-
 import "module-alias/register";
 import express from "express";
 import * as bodyParser from "body-parser";
 
 import { logger } from "./utils/logger";
 import cors from "cors";
-import { createFile } from '../bot/exel/create';
-import { readFile } from '../bot/exel/read';
+import { createFile } from "../bot/exel/create";
+import { readFile } from "../bot/exel/read";
+import { boardRelease } from "../bot/exel/release";
+import fetch from "node-fetch";
 
 const app = express();
 
 // Applying logging service
 app.use(logger.middleware());
-
-
 
 // Applying CORS for the Swagger
 app.use(
@@ -25,7 +24,6 @@ app.use(
   })
 );
 
-
 // Parsing JSON request body
 app.use(
   bodyParser.json({
@@ -33,15 +31,21 @@ app.use(
   })
 );
 
-app.use('/excel', async (req, res) => {
-    const fileName = req.body.action.data.board.name;
-    const cardData = req.body.action;
-    const action = req.body.action.display;
+app.use("/excel", async (req, res) => {
+  const fileName = req.body.action.data.board.name;
+  const cardData = req.body.action;
+  const action = req.body.action.display;
 
-    let fileData = await createFile(fileName);
-    // @ts-ignore
-    await readFile(fileData, cardData, action);
-    res.send()
+  const getRelease = await boardRelease();
+  // setInterval(getRelease, 1000 * 60 * 60 * 24);
+
+  // let fileData = await createFile(fileName);
+  // // @ts-ignore
+  // await readFile(fileData, cardData, action);
+
+  // console.log(req.body)
+  // console.log(req.body.action.data.card.id)
+  res.send();
 });
 
 export { app };

@@ -5,6 +5,7 @@ const ACTION_CREATE_CARD = "action_create_card";
 type Action = {
   data: {
     card: {
+      id: string;
       desc: string;
       name: string;
       shortLink: string;
@@ -12,7 +13,6 @@ type Action = {
     board: {
       id: string;
       name: string;
-      shortLink: string;
     };
     list?: {
       name: string;
@@ -24,6 +24,7 @@ type Action = {
       name: string;
     };
   };
+  date: string;
   memberCreator: {
     username: string;
   };
@@ -34,22 +35,37 @@ type FileData = {
   name: string;
 };
 
+type CardData = {
+  date: string;
+};
+
 type ActionType = {
   translationKey: string;
 };
 
-export async function readFile(fileData: FileData, cardData: Action, actionType:ActionType) {
+export async function readFile(
+  fileData: FileData,
+  cardData: Action,
+  actionType: ActionType,
+  cardDateCreate: CardData
+) {
   const action = actionType.translationKey;
-  if (action != ACTION_MOVE_CARD_FROM_LIST_TO_LIST && action != ACTION_CREATE_CARD) {
+  if (
+    action != ACTION_MOVE_CARD_FROM_LIST_TO_LIST &&
+    action != ACTION_CREATE_CARD
+  ) {
     return;
   }
 
+  const cardId = cardData.data.card.id;
   const fileId = fileData.id;
   const boardName = cardData.data.board.name;
   const cardName = cardData.data.card.name;
   const shortlinkCard = "https://trello.com/c/" + cardData.data.card.shortLink;
-  const shortLinkBoard =
-    "https://trello.com/b/" + cardData.data.board.shortLink;
+  const dateUpdate = new Date(cardData.date).toISOString().split("T")[0];
+  const dateCreate = new Date(1000 * parseInt(cardId.substring(0, 8), 16))
+    .toISOString()
+    .split("T")[0];
   const memberCreator = cardData.memberCreator.username;
   const listCreated = cardData.data.list?.name;
   const listBefore = cardData.data.listBefore?.name;
@@ -78,13 +94,13 @@ export async function readFile(fileData: FileData, cardData: Action, actionType:
       values: [
         [
           "Доска",
-          "Ссылка на доску",
+          "Дата создания",
+          "Дата изменения",
           "Название карточки",
           "Имя ответственного",
           "Ссылка на карточку",
           "Предыдущий список",
           "Текущий список",
-          "Количество записей",
         ],
       ],
       majorDimension: "ROWS",
@@ -100,7 +116,8 @@ export async function readFile(fileData: FileData, cardData: Action, actionType:
       values: [
         [
           boardName,
-          shortLinkBoard,
+          dateCreate,
+          dateUpdate,
           cardName,
           memberCreator,
           shortlinkCard,
@@ -173,28 +190,4 @@ export async function readFile(fileData: FileData, cardData: Action, actionType:
   await sheetsAuth.spreadsheets.values.append(sheetAppendValues);
 
   await sheetsAuth.spreadsheets.batchUpdate(updateSheetStyle);
-
-  const getNumberOfValues = await sheetsAuth.spreadsheets.values.get({
-    range: "A2:A",
-    spreadsheetId: fileId,
-  });
-
-  const valuesCountFormula =
-    "=COUNTA(A2:A" +
-    ((getNumberOfValues.data.values?.length
-      ? getNumberOfValues.data.values?.length
-      : 1) + 1) +
-    ")";
-
-  const sheetAppendValuesCount = {
-    spreadsheetId: fileId,
-    valueInputOption: "USER_ENTERED",
-    range: "H2",
-    requestBody: {
-      values: [[valuesCountFormula]],
-    },
-    responseValueRenderOption: "FORMULA",
-  };
-
-  await sheetsAuth.spreadsheets.values.update(sheetAppendValuesCount);
 }

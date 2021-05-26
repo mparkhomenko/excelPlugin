@@ -48,6 +48,7 @@
     "jest": "^25.3.0",
     "redis": "^3.0.2",
     "save-dev": "^0.0.1-security",
+    "sequelize": "^6.6.2",
     "uuid": "^7.0.3",
     "uuid-token-generator": "^1.0.0"
   },

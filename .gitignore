@@ -32,3 +32,4 @@ schemaspy/
 *.xlsx
 constants.ts
 leenda-creds.json
+docker

@@ -1,12 +1,29 @@
 version: "3.5"
 
 services:
-  local_queue_redis:
-    image: "bitnami/redis:latest"
-    container_name: "local_queue_container"
+  local_db:
+    container_name: trello_db_container
+    image: postgres
     environment:
-      - ALLOW_EMPTY_PASSWORD=yes
+      POSTGRES_USER: "user"
+      POSTGRES_PASSWORD: "1"
+      PGDATA: /data/postgres
+    volumes:
+      - /Users/maksimparkhomenka/Documents/work/bull.js/docker:/data/postgres
     ports:
-      - ${QUEUE_REDIS_PORT}:6379
+      - "2222:5432"
     restart: unless-stopped
-    command: redis-server --requirepass 1
+
+  local_admin:
+    container_name: trello_db_admin_container
+    image: dpage/pgadmin4:4.21
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "trello@pgadmin.org"
+      PGADMIN_DEFAULT_PASSWORD: "admin"
+    volumes:
+      - ./tmp/storages/trello_pgadmin:/root/.pgadmin
+    ports:
+      - "1111:80"
+    restart: unless-stopped
+    depends_on:
+      - local_db
