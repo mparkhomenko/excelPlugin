@@ -1,6 +1,6 @@
 // config should be imported before importing any other file
 import "module-alias/register";
-import { config } from "@core/config";
+// import { config } from "@core/config";
 import { app } from "../app";
 import { logger as loggerInstance } from "../utils/logger";
 import { onSignal, onError } from "../utils/signalHandler";

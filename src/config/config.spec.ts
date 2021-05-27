@@ -7,13 +7,21 @@ describe("config", () => {
     const config = require("./config").config;
 
     expect(config).toMatchObject({
-      queue: {
-        port: expect.any(Number),
-        domain: expect.any(String),
-        username: expect.any(String),
-        password: expect.any(String),
+      postgres: {
+        config: {
+          domain: expect.any(String),
+          user: expect.any(String),
+          database: expect.any(String),
+          password: expect.any(String),
+          port: expect.any(Number),
+          certificate: expect.any(String),
+        },
+        pgadmin: {
+          defaultEmail: expect.any(String),
+          defaultPassword: expect.any(String),
+          port: expect.any(Number),
+        },
       },
-      
     });
   });
 });

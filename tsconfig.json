@@ -38,8 +38,10 @@
     "types": ["node", "jest"],
     "paths": {
       "@core/config": ["./../src/config/config.ts"],
-      "@core/cache": ["./../src/modules/cache"],
-      "@core/queue": ["./../src/modules/queue.ts"],
+      "@core/db-config": ["./../src/db/config/config.ts"],
+      "@core/db": ["./../src/db/index.ts"],
+      // "@core/cache": ["./../src/modules/cache"],
+      // "@core/queue": ["./../src/modules/queue.ts"],
       "@core/utils": ["./../src/utils/index.ts"]
     }
   },

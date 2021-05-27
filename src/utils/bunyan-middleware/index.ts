@@ -2,7 +2,7 @@ import "module-alias/register";
 import { v1 as uuid } from "uuid";
 import bunyan from "bunyan";
 import { Request, Response, NextFunction } from "express";
-import { config } from "@core/config";
+// import { config } from "@core/config";
 
 function getDuration(start: [number, number] | undefined) {
   const diff = process.hrtime(start);

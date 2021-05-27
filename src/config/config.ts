@@ -24,11 +24,20 @@ function normalizeNumber(val: string) {
 }
 
 const config = {
-  queue: {
-    host: envVars.QUEUE_REDIS_DOMAIN,
-    port: normalizeNumber(envVars.QUEUE_REDIS_PORT),
-    username: envVars.QUEUE_REDIS_USERNAME,
-    password: envVars.QUEUE_REDIS_PASSWORD,
+  env: envVars.NODE_ENV,
+  postgres: {
+    config: {
+      domain: envVars.DATABASE_POSTGRES_DOMAIN,
+      user: envVars.DATABASE_POSTGRES_USER,
+      database: envVars.DATABASE_POSTGRES_DATABASE,
+      password: envVars.DATABASE_POSTGRES_PASSWORD,
+      port: normalizeNumber(envVars.DATABASE_POSTGRES_PORT),
+    },
+    pgadmin: {
+      defaultEmail: envVars.DATABASE_PGADMIN_DEFAULT_EMAIL,
+      defaultPassword: envVars.DATABASE_PGADMIN_DEFAULT_PASSWORD,
+      port: normalizeNumber(envVars.DATABASE_PGADMIN_PORT),
+    },
   },
 };
 

@@ -17,7 +17,6 @@ report*
 run_auth.sh
 run_fileserver.sh
 run_server.sh
-.env
 uploaded/
 tmp/
 yarn-error.log
@@ -33,3 +32,4 @@ schemaspy/
 constants.ts
 leenda-creds.json
 docker
+.env

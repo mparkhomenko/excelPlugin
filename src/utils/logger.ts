@@ -3,7 +3,7 @@ import bunyan from "bunyan";
 import bformat from "bunyan-format";
 import path from "path";
 import fs from "fs";
-import { config } from "@core/config";
+// import { config } from "@core/config";
 import Elasticsearch from "bunyan-elasticsearch";
 import { createWriteStream } from "fs";
 import { Request, Response, NextFunction } from "express";

@@ -1,4 +1,4 @@
-import { queue } from "@core/queue";
+// import { queue } from "@core/queue";
 import { Job } from "bull";
 import { readFile } from "./utils";
 import { logger as loggerInstance} from "../utils/logger";
@@ -30,16 +30,16 @@ const processRead = async (
   done();
 };
 
-queue.add(PROCESS_READ, processRead);
+// queue.add(PROCESS_READ, processRead);
 
 const toQueue = (
   payload: { onError?: (error: Error) => Promise<void> } & PayloadType
 ) => {
-  queue.toQueue(PROCESS_READ, payload);
+  // queue.toQueue(PROCESS_READ, payload);
 };
 
 const closeQueue = () => {
-  queue.remove(PROCESS_READ);
+  // queue.remove(PROCESS_READ);
 };
 
 export { toQueue, closeQueue, processRead };

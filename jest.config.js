@@ -25,7 +25,9 @@ module.exports = {
     "^@cryptoPackage/argon2$": "<rootDir>/src/helpers/Argon2",
     "^@helpers$": "<rootDir>/src/helpers",
     "^@core/config$": "<rootDir>/src/config/config",
-    "^@core/cache$": "<rootDir>/src/modules/cache",
-    "^@core/queue$": "<rootDir>/src/modules/queue",
+    "^@core/db$": "<rootDir>/src/db/index",
+    "@core/db-config": ["<rootDir>/src/db/config/config"],
+    // "^@core/cache$": "<rootDir>/src/modules/cache",
+    // "^@core/queue$": "<rootDir>/src/modules/queue",
   },
 };

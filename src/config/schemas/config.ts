@@ -2,10 +2,19 @@ import * as Joi from "joi";
 
 export const configSchema = Joi.object()
   .keys({
-    QUEUE_REDIS_PORT: Joi.number().required(),
-    QUEUE_REDIS_DOMAIN: Joi.string().required(),
-    QUEUE_REDIS_PASSWORD: Joi.string().required(),
-    QUEUE_REDIS_USERNAME: Joi.string().required(),
+    NODE_ENV: Joi.string()
+    .allow(["development", "production", "test"])
+    .default("development"),
+
+    DATABASE_POSTGRES_DOMAIN: Joi.string().required(),
+    DATABASE_POSTGRES_USER: Joi.string().required(),
+    DATABASE_POSTGRES_DATABASE: Joi.string().required(),
+    DATABASE_POSTGRES_PASSWORD: Joi.string().required(),
+    DATABASE_POSTGRES_PORT: Joi.number().required(),
+
+    DATABASE_PGADMIN_DEFAULT_EMAIL: Joi.string().required(),
+    DATABASE_PGADMIN_DEFAULT_PASSWORD: Joi.string().required(),
+    DATABASE_PGADMIN_PORT: Joi.number().required(),
   })
   .unknown()
   .required();

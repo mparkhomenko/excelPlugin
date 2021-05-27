@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "rm -rf dist && tsc -p .",
-    "start": "yarn build && node ./dist/src/bot/www/bin.js $1"
+    "start": "yarn build && node ./dist/src/bot/www/bin.js $1",
+    "db:migrate": "yarn build && node ./tools/migrate-db.js up"
   },
   "dependencies": {
     "@types/bull": "^3.12.2",
@@ -27,6 +28,7 @@
     "bull": "^3.16.0",
     "bunyan": "^1.8.12",
     "bunyan-format": "^0.2.1",
+    "config": "^3.3.6",
     "cors": "^2.8.5",
     "cross-env": "^7.0.2",
     "debug": "^4.1.1",
@@ -46,9 +48,11 @@
     "ioredis": "^4.19.4",
     "istanbul": "^0.4.5",
     "jest": "^25.3.0",
+    "pg": "^8.6.0",
     "redis": "^3.0.2",
     "save-dev": "^0.0.1-security",
     "sequelize": "^6.6.2",
+    "sequelize-cli": "^6.2.0",
     "uuid": "^7.0.3",
     "uuid-token-generator": "^1.0.0"
   },
@@ -78,6 +82,8 @@
   "author": "",
   "license": "MIT",
   "_moduleAliases": {
+    "@core/db": "dist/src/db/index",
+    "@core/db-config": "dist/src/db/config/config",
     "@core/utils": "dist/src/utils/index",
     "@core/config": "dist/src/config/config",
     "@core/cache": "dist/src/modules/cache",
