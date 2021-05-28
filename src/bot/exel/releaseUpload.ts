@@ -88,6 +88,7 @@ export async function uploadReleaseData(fileData: FileData, listId: string) {
 
     await db.Card.create({
       cardId: cardId,
+      listId: listId,
       cardName: cardName,
       dateCreate: dateCreate,
       dateUpdate: dateUpdate,

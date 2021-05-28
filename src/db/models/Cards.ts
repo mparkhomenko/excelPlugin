@@ -6,6 +6,7 @@ interface Card extends Model {
 
   cardName: string;
   cardId: string;
+  listId: string;
   dateCreate: string;
   dateUpdate: string;
   shortLink: string;
@@ -26,6 +27,7 @@ export const Card = (dbService: Sequelize) => {
       unique: true,
     },
     cardId: { type: DataTypes.STRING(250), allowNull: false },
+    listId: { type: DataTypes.STRING(250), allowNull: false },
     cardName: { type: DataTypes.STRING(250), allowNull: false },
     dateCreate: { type: DataTypes.STRING(250), allowNull: false },
     dateUpdate: {
