@@ -14,7 +14,6 @@ describe("config", () => {
           database: expect.any(String),
           password: expect.any(String),
           port: expect.any(Number),
-          certificate: expect.any(String),
         },
         pgadmin: {
           defaultEmail: expect.any(String),

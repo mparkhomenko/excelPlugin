@@ -8,7 +8,7 @@ const { config } = require(path.resolve(
 const isSeed = process.argv[2] === "up";
 const env = config.env;
 const command = isSeed ? "db:migrate" : "db:migrate:undo:all";
-const migrationPath = "src/db";
+const migrationPath = "src/db/migrations";
 const migrationDistPath = `dist/${migrationPath}`;
 
 const commands = [

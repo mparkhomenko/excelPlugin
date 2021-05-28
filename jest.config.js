@@ -27,6 +27,7 @@ module.exports = {
     "^@core/config$": "<rootDir>/src/config/config",
     "^@core/db$": "<rootDir>/src/db/index",
     "@core/db-config": ["<rootDir>/src/db/config/config"],
+    "^@core/models$": "<rootDir>/src/models/index",
     // "^@core/cache$": "<rootDir>/src/modules/cache",
     // "^@core/queue$": "<rootDir>/src/modules/queue",
   },

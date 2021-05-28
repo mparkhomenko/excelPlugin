@@ -86,6 +86,8 @@
     "@core/db-config": "dist/src/db/config/config",
     "@core/utils": "dist/src/utils/index",
     "@core/config": "dist/src/config/config",
+    "@core/models": "dist/src/models",
+    "@core/modules/database": "dist/src/modules/database/index",
     "@core/cache": "dist/src/modules/cache",
     "@core/queue": "dist/src/modules/queue"
   }

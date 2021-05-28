@@ -1,6 +1,7 @@
 import { google } from "googleapis";
 import fetch from "node-fetch";
 import { KEY, TOKEN } from "./constants";
+import { db } from "../../db";
 
 type FileData = {
   id: string;
@@ -85,67 +86,77 @@ export async function uploadReleaseData(fileData: FileData, listId: string) {
       },
     };
 
-    const getSheet = await sheetsAuth.spreadsheets.get(getSheetData);
-    const sheetId = getSheet.data.sheets?.[0].properties?.sheetId;
+    await db.Card.create({
+      cardId: cardId,
+      cardName: cardName,
+      dateCreate: dateCreate,
+      dateUpdate: dateUpdate,
+      shortlinkCard: shortlinkCard,
+    })
+      .then((res: any) => console.log(res))
+      .catch((e: any) => console.log(e));
 
-    const updateSheetStyle = {
-      spreadsheetId: fileId,
-      requestBody: {
-        requests: [
-          {
-            repeatCell: {
-              range: {
-                sheetId: sheetId,
-                startRowIndex: 0,
-                endRowIndex: 1,
-                startColumnIndex: 0,
-                endColumnIndex: 4,
-              },
-              cell: {
-                userEnteredFormat: {
-                  backgroundColor: {
-                    red: 0.85,
-                    green: 0.85,
-                    blue: 1.0,
-                  },
-                  horizontalAlignment: "CENTER",
-                  textFormat: {
-                    foregroundColor: {
-                      red: 0.0,
-                      green: 0.0,
-                      blue: 0.0,
-                    },
-                    fontSize: 12,
-                    bold: true,
-                  },
-                },
-              },
-              fields:
-                "userEnteredFormat(backgroundColor,textFormat,horizontalAlignment)",
-            },
-          },
-          {
-            updateDimensionProperties: {
-              range: {
-                sheetId: sheetId,
-                dimension: "COLUMNS",
-                startIndex: 0,
-                endIndex: 4,
-              },
-              properties: {
-                pixelSize: 220,
-              },
-              fields: "pixelSize",
-            },
-          },
-        ],
-      },
-    };
+    // const getSheet = await sheetsAuth.spreadsheets.get(getSheetData);
+    // const sheetId = getSheet.data.sheets?.[0].properties?.sheetId;
 
-    await sheetsAuth.spreadsheets.values.update(sheetAddHeaders);
+    // const updateSheetStyle = {
+    //   spreadsheetId: fileId,
+    //   requestBody: {
+    //     requests: [
+    //       {
+    //         repeatCell: {
+    //           range: {
+    //             sheetId: sheetId,
+    //             startRowIndex: 0,
+    //             endRowIndex: 1,
+    //             startColumnIndex: 0,
+    //             endColumnIndex: 4,
+    //           },
+    //           cell: {
+    //             userEnteredFormat: {
+    //               backgroundColor: {
+    //                 red: 0.85,
+    //                 green: 0.85,
+    //                 blue: 1.0,
+    //               },
+    //               horizontalAlignment: "CENTER",
+    //               textFormat: {
+    //                 foregroundColor: {
+    //                   red: 0.0,
+    //                   green: 0.0,
+    //                   blue: 0.0,
+    //                 },
+    //                 fontSize: 12,
+    //                 bold: true,
+    //               },
+    //             },
+    //           },
+    //           fields:
+    //             "userEnteredFormat(backgroundColor,textFormat,horizontalAlignment)",
+    //         },
+    //       },
+    //       {
+    //         updateDimensionProperties: {
+    //           range: {
+    //             sheetId: sheetId,
+    //             dimension: "COLUMNS",
+    //             startIndex: 0,
+    //             endIndex: 4,
+    //           },
+    //           properties: {
+    //             pixelSize: 220,
+    //           },
+    //           fields: "pixelSize",
+    //         },
+    //       },
+    //     ],
+    //   },
+    // };
 
-    await sheetsAuth.spreadsheets.values.append(sheetAppendValues);
+    // await sheetsAuth.spreadsheets.values.update(sheetAddHeaders);
 
-    await sheetsAuth.spreadsheets.batchUpdate(updateSheetStyle);
+    // await sheetsAuth.spreadsheets.values.append(sheetAppendValues);
+
+    // await sheetsAuth.spreadsheets.batchUpdate(updateSheetStyle);
   };
 }
