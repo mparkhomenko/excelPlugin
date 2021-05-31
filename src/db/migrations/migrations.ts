@@ -10,7 +10,7 @@ module.exports = {
         unique: true,
       },
       cardId: { type: DataTypes.STRING(250), allowNull: false },
-      listId: { type: DataTypes.STRING(250), allowNull: false },
+      listName: { type: DataTypes.STRING(250), allowNull: false },
       cardName: { type: DataTypes.STRING(250), allowNull: false },
       dateCreate: { type: DataTypes.STRING(250), allowNull: false },
       dateUpdate: {
@@ -20,6 +20,11 @@ module.exports = {
       shortlinkCard: {
         type: DataTypes.STRING(250),
         allowNull: false,
+      },
+      isSended: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: false,
       },
       createdAt: {
         allowNull: false,

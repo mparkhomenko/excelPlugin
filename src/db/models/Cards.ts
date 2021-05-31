@@ -6,10 +6,11 @@ interface Card extends Model {
 
   cardName: string;
   cardId: string;
-  listId: string;
+  listName: string;
   dateCreate: string;
   dateUpdate: string;
   shortLink: string;
+  isSended: boolean;
 
   readonly createdAt: Date;
   readonly updatedAt: Date;
@@ -27,7 +28,7 @@ export const Card = (dbService: Sequelize) => {
       unique: true,
     },
     cardId: { type: DataTypes.STRING(250), allowNull: false },
-    listId: { type: DataTypes.STRING(250), allowNull: false },
+    listName: { type: DataTypes.STRING(250), allowNull: false },
     cardName: { type: DataTypes.STRING(250), allowNull: false },
     dateCreate: { type: DataTypes.STRING(250), allowNull: false },
     dateUpdate: {
@@ -36,6 +37,10 @@ export const Card = (dbService: Sequelize) => {
     },
     shortlinkCard: {
       type: DataTypes.STRING(250),
+      allowNull: false,
+    },
+    isSended: {
+      type: DataTypes.BOOLEAN,
       allowNull: false,
     },
   };

@@ -39,9 +39,9 @@ app.use("/excel", async (req, res) => {
   const getRelease = await boardRelease();
   // setInterval(getRelease, 1000 * 60 * 60 * 24);
 
-  let fileData = await createFile(fileName);
-  // @ts-ignore
-  await readFile(fileData, cardData, action);
+  // let fileData = await createFile(fileName);
+  // // @ts-ignore
+  // await readFile(fileData, cardData, action);
 
   res.send();
 });
