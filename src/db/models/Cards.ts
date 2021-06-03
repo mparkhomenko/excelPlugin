@@ -9,7 +9,7 @@ interface Card extends Model {
   listName: string;
   dateCreate: string;
   dateUpdate: string;
-  shortLink: string;
+  shortlinkCard: string;
   isSended: boolean;
 
   readonly createdAt: Date;

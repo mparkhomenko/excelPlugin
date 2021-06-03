@@ -6,7 +6,7 @@ import { logger } from "./utils/logger";
 import cors from "cors";
 import { createFile } from "../bot/exel/create";
 import { readFile } from "../bot/exel/read";
-import { boardRelease } from "../bot/exel/release";
+import { uploadReleaseBoard } from "./exel/releaseBoard/checReleaseFiles";
 import fetch from "node-fetch";
 
 const app = express();
@@ -36,12 +36,11 @@ app.use("/excel", async (req, res) => {
   const cardData = req.body.action;
   const action = req.body.action.display;
 
-  const getRelease = await boardRelease();
-  // setInterval(getRelease, 1000 * 60 * 60 * 24);
+  const getRelease = await uploadReleaseBoard();
 
-  // let fileData = await createFile(fileName);
-  // // @ts-ignore
-  // await readFile(fileData, cardData, action);
+  let fileData = await createFile(fileName);
+  // @ts-ignore
+  await readFile(fileData, cardData, action);
 
   res.send();
 });

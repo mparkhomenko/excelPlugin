@@ -5,7 +5,7 @@ export type CardsType = {
   cardName: string;
   dateCreate: string;
   dateUpdate: string;
-  shortLink: string;
+  shortlinkCard: string;
   isSended: boolean;
 };
 
@@ -15,6 +15,6 @@ export type CardsCreate = {
   listName: string;
   dateCreate: string;
   dateUpdate: string;
-  shortLink: string;
+  shortlinkCard: string;
   isSended: boolean;
 };
