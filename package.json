@@ -48,6 +48,7 @@
     "ioredis": "^4.19.4",
     "istanbul": "^0.4.5",
     "jest": "^25.3.0",
+    "node-cron": "^3.0.0",
     "pg": "^8.6.0",
     "redis": "^3.0.2",
     "save-dev": "^0.0.1-security",

@@ -19,7 +19,6 @@ export async function uploadReleaseBoard() {
 
   const lists = await responseLists.json();
 
-  const cardsArray = [];
   for await (const list of lists) {
     const listId = list.id;
     const listName = list.name;

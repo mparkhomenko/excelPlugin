@@ -6,7 +6,9 @@ import { logger } from "./utils/logger";
 import cors from "cors";
 import { createFile } from "../bot/exel/create";
 import { readFile } from "../bot/exel/read";
+import { uploadReleaseBoard } from "../bot/exel/releaseBoard/checReleaseFiles";
 
+const cron = require('node-cron');
 const app = express();
 
 // Applying logging service
@@ -28,6 +30,10 @@ app.use(
     limit: 81920,
   })
 );
+
+cron.schedule('*', async () => {
+  await uploadReleaseBoard();
+});
 
 app.use("/excel", async (req, res) => {
   const fileName = req.body.action.data.board.name;
