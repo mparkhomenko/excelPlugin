@@ -6,9 +6,8 @@ import { logger } from "./utils/logger";
 import cors from "cors";
 import { createFile } from "../bot/exel/create";
 import { readFile } from "../bot/exel/read";
-import { uploadReleaseBoard } from "../bot/exel/releaseBoard/checReleaseFiles";
 
-const cron = require('node-cron');
+import { toQueue } from "./queue/resize-image";
 const app = express();
 
 // Applying logging service
@@ -31,9 +30,7 @@ app.use(
   })
 );
 
-cron.schedule('*', async () => {
-  await uploadReleaseBoard();
-});
+toQueue({ uuid: `${new Date().getDate()}` });
 
 app.use("/excel", async (req, res) => {
   const fileName = req.body.action.data.board.name;

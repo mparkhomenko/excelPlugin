@@ -39,6 +39,13 @@ const config = {
       port: normalizeNumber(envVars.DATABASE_PGADMIN_PORT),
     },
   },
+  redis: {
+    queue: {
+      host: envVars.REDIS_QUEUE_HOST,
+      port: normalizeNumber(envVars.REDIS_QUEUE_PORT),
+      password: envVars.REDIS_QUEUE_PASSWORD,
+    }
+  }
 };
 
 export { config };

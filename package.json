@@ -6,7 +6,8 @@
   "scripts": {
     "build": "rm -rf dist && tsc -p .",
     "start": "yarn build && node ./dist/src/bot/www/bin.js $1",
-    "db:migrate": "yarn build && node ./tools/migrate-db.js up"
+    "db:migrate": "yarn build && node ./tools/migrate-db.js up",
+    "up:redis": "docker-compose --file=./docker-compose.redis.yml --env-file=.env up -d --force-recreate --remove-orphans"
   },
   "dependencies": {
     "@types/bull": "^3.12.2",
@@ -25,7 +26,7 @@
     "apollo-server-plugin-base": "^0.11.0",
     "babel-plugin-module-resolver": "^4.0.0",
     "body-parser": "^1.19.0",
-    "bull": "^3.16.0",
+    "bull": "^3.22.7",
     "bunyan": "^1.8.12",
     "bunyan-format": "^0.2.1",
     "config": "^3.3.6",

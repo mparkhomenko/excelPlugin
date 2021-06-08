@@ -1,5 +1,5 @@
 import Queue from "bull";
-// import { config } from "@core/config";
+import { config } from "@core/config";
 
 const store = new Map<string, Queue.Queue<any>>();
 
@@ -13,7 +13,7 @@ const createInstance = (name: string) => {
   // const item = new Queue(name, `redis://${config.queue.domain.replace('http://', '')}:${config.queue.port}`);
 
   const item = new Queue(name, {
-    // redis: config.queue,
+    redis: config.redis.queue,
   });
   store.set(name, item);
 
@@ -42,7 +42,9 @@ const get = (name: string) => {
 };
 
 const toQueue = (name: string, object: any) => {
-  store.get(name)?.add(object, { removeOnFail: true });
+  store
+    .get(name)
+    ?.add(object, { removeOnFail: true, repeat: { cron: "15 3 * * *" } });
 };
 
 /**

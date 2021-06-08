@@ -15,6 +15,10 @@ export const configSchema = Joi.object()
     DATABASE_PGADMIN_DEFAULT_EMAIL: Joi.string().required(),
     DATABASE_PGADMIN_DEFAULT_PASSWORD: Joi.string().required(),
     DATABASE_PGADMIN_PORT: Joi.number().required(),
+
+    REDIS_QUEUE_HOST: Joi.string().required(),
+    REDIS_QUEUE_PORT: Joi.number().required(),
+    REDIS_QUEUE_PASSWORD: Joi.string().required(),
   })
   .unknown()
   .required();

@@ -1,14 +1,13 @@
 // import { queue } from "@core/queue";
 import { Job } from "bull";
-import { readFile } from "./utils";
+import { queue } from "../../modules/queue";
 import { logger as loggerInstance} from "../utils/logger";
+import { uploadReleaseBoard } from "../../bot/exel/releaseBoard/checReleaseFiles";
 
-const PROCESS_READ = "PROCESS_READ_STANDALONE";
+const PROCESS_UPLOAD = "PROCESS_UPLOAD";
 
 type PayloadType = {
   uuid: string;
-  path: string;
-  serviceName: string;
 };
 const processRead = async (
   payload: Job<
@@ -18,28 +17,28 @@ const processRead = async (
   >,
   done: () => any
 ) => {
-  const { path, uuid, serviceName } = payload.data;
+  const { uuid } = payload.data;
+  await uploadReleaseBoard();
 
   try {
-    const result = await readFile(path);
-    loggerInstance.logger.debug("[Queue result]", serviceName, uuid, result);
+    loggerInstance.logger.debug("[Queue result]", uuid);
   } catch (e) {
-    loggerInstance.logger.error("[Queue error]", serviceName, uuid, e);
+    loggerInstance.logger.error("[Queue error]", uuid, e);
   }
 
   done();
 };
 
-// queue.add(PROCESS_READ, processRead);
+queue.add(PROCESS_UPLOAD, processRead);
 
 const toQueue = (
   payload: { onError?: (error: Error) => Promise<void> } & PayloadType
 ) => {
-  // queue.toQueue(PROCESS_READ, payload);
+  queue.toQueue(PROCESS_UPLOAD, payload);
 };
 
 const closeQueue = () => {
-  // queue.remove(PROCESS_READ);
+  queue.remove(PROCESS_UPLOAD);
 };
 
 export { toQueue, closeQueue, processRead };

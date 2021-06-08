@@ -21,6 +21,13 @@ describe("config", () => {
           port: expect.any(Number),
         },
       },
+      redis: {
+        queue: {
+          host: expect.any(String),
+          port: expect.any(Number),
+          password: expect.any(String),
+        }
+      }
     });
   });
 });
